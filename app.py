@@ -5,8 +5,7 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 # sidebar settings
-with st.sidebar.expander(label='Overview'):
-  radio = st.radio(options=('General statistics', 'General visualizations'))
+radio = st.sidebar.radio(label='Overview', options=('General statistics', 'General visualizations'))
   
 with st.sidebar.expander(label='Search'):
   st.slider("SiO\u2082 concentration, mol%",
