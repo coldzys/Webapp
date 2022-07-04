@@ -5,7 +5,7 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 # sidebar settings
-def callback_state_overview(one: Boolean, two: Boolean):
+def callback_state_overview(one, two):
   if one == True:
     two = False
 
