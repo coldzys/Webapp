@@ -5,6 +5,10 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 # sidebar settings
+with st.sidebar.expander(label='Overview'):
+  statistics = st.checkbox('General statistics')
+  visualizations = st.checkbox('General visualizations')
+  
 with st.sidebar.expander(label='Search'):
   st.slider("SiO\u2082 concentration, mol%",
                   min_value = 50.0,
