@@ -5,9 +5,7 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 # sidebar settings
-with st.sidebar.form(key='my_form'):
-  st.subheader('Glass composition')
-
+with st.sidebar.expander(label='Search'):
   st.slider("SiO\u2082 concentration, mol%",
                   min_value = 50.0,
                   max_value = 100.0,
@@ -28,5 +26,3 @@ with st.sidebar.form(key='my_form'):
                   max_value = 50.0,
                   key='x4')
 
-  submit_button = st.form_submit_button(label='Calculate!', on_click=form_callback)
-  st.write("When you run the model, compositions will be rescaled to ensure they sum to 100%.")
