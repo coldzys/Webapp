@@ -5,7 +5,13 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 # sidebar settings
-radio = st.sidebar.radio(label='Overview', options=('General statistics', 'General visualizations'))
+def callback_state_overview(one: Boolean, two: Boolean):
+  if one == True:
+    two = False
+
+with st.sidebar.expander(label='Overview'):
+  statistics = st.checkbox('General statistics', on_change=callback_state_overview(statistics, visualizations))
+  visualizations = st.checkbox('General visualizations', one_change=callback_state_overview(visualizations, statistics))
   
 with st.sidebar.expander(label='Search'):
   st.slider("SiO\u2082 concentration, mol%",
