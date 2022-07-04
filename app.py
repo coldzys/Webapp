@@ -8,7 +8,7 @@ st.set_page_config(layout="wide")
 with st.sidebar.expander(label='Overview'):
   overview = st.radio(label='Select general information to present', options=('General statistics', 'General visualizations'))
   
-with st.sidebar.expander(label='Search'):
+with st.sidebar.expander(label='Web search and visualize'):
   company_name = st.text_input('Company name')
   location = st.text_input('Location')
   job_name = st.text_input('Job name')
