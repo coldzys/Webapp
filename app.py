@@ -6,8 +6,8 @@ st.set_page_config(layout="wide")
 
 # sidebar settings
 with st.sidebar.expander(label='Overview'):
-  statistics = st.checkbox('General statistics')
-  visualizations = st.checkbox('General visualizations')
+  statistics = st.checkbox('General statistics', on_change=lambda _: if statistics == True: visualizations = False)
+  visualizations = st.checkbox('General visualizations', on_change=lambda _: if visualizations == True: statistics = False)
   
 with st.sidebar.expander(label='Search'):
   st.slider("SiO\u2082 concentration, mol%",
